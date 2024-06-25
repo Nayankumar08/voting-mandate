@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotee Voting Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body">
+    <header>
+        <h1  class="heading">Promote Voting</h1>
+    </header>
+    <button id="reveal-description" onclick="animateText">Learn More</button>
+
+    <section id="why-vote">
+        <h2>Why Vote?</h2>
+        <p id="why-vote-text">Voting is your voice in the decision-making process. It allows you to contribute to shaping the future of your community or organization.</p>
+    </section>
+    <section id="how-to-vote">
+        <h2>How to Vote</h2>
+        <p id="how-to-vote-text">1. Register to vote if required by your organization's rules. 2. Review the candidates and their platforms. 3. Participate in voting according to the designated process (online, in-person, etc.). 4. Follow any instructions provided for casting your vote accurately.</p>
+    </section>
+    <section id="fair-elections">
+        <h2>How to Ensure Fair Elections</h2>
+        <p id="fair-elections-text">1. Promote transparency in the election process. 2. Ensure equal access to voting for all eligible participants. 3. Implement secure voting methods to prevent tampering or fraud. 4. Provide avenues for addressing concerns or disputes regarding the election process.</p>
+    </section>
+    <img src="voting.jpg" height="100px" width="100px">
+    
+
+    <script>
+        function animateText(elementId) {
+            const text = document.getElementById(elementId).textContent;
+            const words = text.split(' ');
+            let index = 0;
+            document.getElementById(elementId).textContent = '';
+            const interval = setInterval(() => {
+                document.getElementById(elementId).textContent += words[index] + ' ';
+                index++;
+                if (index >= words.length) {
+                    clearInterval(interval);
+                }
+            }, 300); }
+
+        animateText('why-vote-text');
+        animateText('how-to-vote-text');
+        animateText('fair-elections-text');
+
+
+    </script>
+
+</body>
+<style>
+  body{
+    
+    background-color: #a1c4fd;
+  }
+.heading{
+    text-align: center;
+    padding-top: 27px;
+    
+}
+    
+
+
+header {
+    background-color: #4270d4;
+    height: 80px;
+}
+
+h1 {
+    color: white; 
+    text-align: center;
+    line-height: 30px;
+}
+
+section {
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #ffffff; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #007bff;
+}
+
+p {
+    color: #333333;
+    text-align: center; 
+}
+
+footer {
+    text-align: center;
+    background-color: #007bff;    padding: 20px 0;
+}
+</style>
+
+</html>
